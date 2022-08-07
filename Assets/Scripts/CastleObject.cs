@@ -1,14 +1,12 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CastleObject : MonoBehaviour
 {
     public StatisticManager statisticManager;
 
-    void Update()
+    void OnMouseDown()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            statisticManager.AddPeasant();
-        }
+        statisticManager.AddPeasant();
     }
 }
