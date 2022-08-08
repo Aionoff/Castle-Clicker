@@ -1112,7 +1112,7 @@ RectTransform:
   - {fileID: 642710112}
   - {fileID: 1106369700}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1373,6 +1373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statisticManager: {fileID: 1838289524}
+  canvas: {fileID: 1385084801}
+  increaseObject: {fileID: 7193024148292607959, guid: 3b1bc8987c1552f489135955151cd064, type: 3}
 --- !u!212 &1782224704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1433,12 +1435,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782224702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.26, y: -0.9727, z: 0}
+  m_LocalPosition: {x: -4.26, y: -0.9727, z: 91}
   m_LocalScale: {x: 1.7, y: 1.35286, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1782224706
 BoxCollider2D:
@@ -1549,7 +1551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1838289524
 MonoBehaviour:
@@ -1567,6 +1569,7 @@ MonoBehaviour:
   peasants: 0
   huts: 0
   peasantsPerSec: 0
+  peasantsPerClick: 0
   peasantsPerHut: 0
   hutCostFood: 0
   hutCostWood: 0

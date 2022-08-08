@@ -8,6 +8,7 @@ public class StatisticManager : MonoBehaviour
     public int peasants;
     public int huts;
     public int peasantsPerSec;
+    public int peasantsPerClick;
     public int peasantsPerHut;
     public int hutCostFood;
     public int hutCostWood;
@@ -44,6 +45,7 @@ public class StatisticManager : MonoBehaviour
         peasantsPerHut = 1;
         hutCostFood = 200;
         hutCostWood = 50;
+        peasantsPerClick = 1;
 }
 
     void Update()
@@ -62,8 +64,8 @@ public class StatisticManager : MonoBehaviour
 
     public void AddPeasant()
     {
-        population++;
-        peasants++;
+        population = population + peasantsPerClick;
+        peasants = peasants + peasantsPerClick;
     }
 
     public void BuyHut()
