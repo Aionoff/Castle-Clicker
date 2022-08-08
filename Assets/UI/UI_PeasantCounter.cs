@@ -9,6 +9,6 @@ public class UI_PeasantCounter : MonoBehaviour
 
     void Update()
     {
-        peasantCounter.text = "Peasants: " + statisticManager.peasants;
+        peasantCounter.text = $"Peasants: {statisticManager.peasants}, {statisticManager.peasantsPerSec}/s" ;
     }
 }

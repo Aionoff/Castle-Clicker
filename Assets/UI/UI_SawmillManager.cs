@@ -24,5 +24,4 @@ public class UI_SawmillManager : MonoBehaviour
 	{
 		buttonText.text = $"Sawmill. You have {statisticManager.sawmills}. Cost: {statisticManager.sawmillCostPeasants} peas. {statisticManager.sawmillCostFood} food";
 	}
-
 }

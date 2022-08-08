@@ -3,14 +3,23 @@ using UnityEngine;
 public class StatisticManager : MonoBehaviour
 {
     public int population;
-    public int peasants;
 
+    //people
+    public int peasants;
+    public int huts;
+    public int peasantsPerSec;
+    public int peasantsPerHut;
+    public int hutCostFood;
+    public int hutCostWood;
+
+    //food
     public int gardens;
     public int food;
     public float foodPerSec;
     public int foodPerGarden = 4;
     public int gardenCost;
 
+    //wood
     public int sawmills;
     public int wood;
     public int woodPerSawmills = 2;
@@ -32,6 +41,9 @@ public class StatisticManager : MonoBehaviour
         foodPerSec = 0f;
         sawmillCostPeasants = 30;
         sawmillCostFood = 50;
+        peasantsPerHut = 1;
+        hutCostFood = 200;
+        hutCostWood = 50;
 }
 
     void Update()
@@ -41,6 +53,8 @@ public class StatisticManager : MonoBehaviour
         if (timer >= delayAmount)
         {
             timer = 0f;
+
+            UpdatePeasants();
             UpdateFood();
             UpdateWood();
         }
@@ -50,6 +64,20 @@ public class StatisticManager : MonoBehaviour
     {
         population++;
         peasants++;
+    }
+
+    public void BuyHut()
+    {
+        if(food >= hutCostFood && wood >= hutCostWood)
+        {
+            huts++;
+
+            food = food - hutCostFood;
+            wood = wood - hutCostWood;
+
+            hutCostFood = (int)(hutCostFood * 1.689);
+            hutCostWood = (int)(hutCostWood * 1.689);
+        }
     }
 
     public void BuyGarden()
@@ -89,5 +117,15 @@ public class StatisticManager : MonoBehaviour
 
         wood = wood + woodIncome;
         woodPerSec = woodIncome;
+    }
+
+    private void UpdatePeasants()
+    {
+        var peasantsIncome = huts * peasantsPerHut;
+
+        peasants = peasants + peasantsIncome;
+        population = population + peasantsIncome;
+
+        peasantsPerSec = peasantsIncome;
     }
 }
