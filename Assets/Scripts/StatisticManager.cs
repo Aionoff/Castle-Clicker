@@ -17,7 +17,7 @@ public class StatisticManager : MonoBehaviour
     {
         population = 0;
         peasants = 0;
-        food = 100;
+        food = 0;
         delayAmount = 1;
         gardens = 0;
         gardenCost = 10;
@@ -53,11 +53,10 @@ public class StatisticManager : MonoBehaviour
 
     private void UpdateFood()
     {
-        var foodIncome = gardens * 10;
-        var foodOutcome = (int)(population / 10);
+        var foodPerGarden = 4;
+        var foodIncome = gardens * foodPerGarden;
 
         food = food + foodIncome;
-        food = food - foodOutcome;
-        foodPerSec = foodIncome - foodOutcome;
+        foodPerSec = foodIncome;
     }
 }
